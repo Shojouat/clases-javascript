@@ -71,3 +71,5 @@ console.log(objetoUnido) // Imprime el nuevo objeto combinado
 
 const objetoUnido2 = Object.assign({}, objeto1, objeto2) // Combina los objetos utilizando el método Object.assign()
 console.log(objetoUnido2) // Imprime el nuevo objeto combinado creado con Object.assign()
+
+//
