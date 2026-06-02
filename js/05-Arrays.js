@@ -13,9 +13,9 @@ console.table(frutas) // Imprime el array en formato de tabla para una mejor vis
 frutas.push("pera") // Agrega un nuevo elemento al final del array
 console.log(frutas) // Imprime el array actualizado con el nuevo elemento
 
-const nuevaFruta = ["...frutas", "mango"] // Crea un nuevo array combinando el array original con un nuevo elemento utilizando el operador de propagación
+const nuevaFruta = [...frutas, "mango"] // Crea un nuevo array combinando el array original con un nuevo elemento utilizando el operador de propagación
 //El operador de propagacion no muta el array original, sino que crea un nuevo array con los elementos del array original y el nuevo elemento agregado al final.
-//Se recomienda utilizar ese operador para usar React, ya que React se basa en la inmutabilidad de los datos para optimizar el rendimiento y evitar efectos secundarios no deseados.    
+//React favorece trabajar de forma inmutable, por eso suele utilizarse el spread operator para crear nuevos arrays u objetos en lugar de modificar los existentes.    
 console.log(nuevaFruta) // Imprime el nuevo array combinado
 console.table(nuevaFruta) // Imprime el nuevo array combinado en formato de tabla para una mejor visualización
 
@@ -31,8 +31,11 @@ frutas.pop() // Elimina el último elemento del array
 console.log(frutas) // Imprime el array actualizado sin el último elemento
 frutas.shift() // Elimina el primer elemento del array
 console.log(frutas) // Imprime el array actualizado sin el primer elemento
+frutas.unshift("kiwi")// Agrega al inicio un elemento
+console.log(frutas)
 
-const frutas4 = frutas.filter((frutas) => frutas !== "banana") // Crea un nuevo array filtrando los elementos que no son "banana"
+
+const frutas4 = frutas.filter((fruta) => fruta !== "banana") // Crea un nuevo array filtrando los elementos que no son "banana"
 console.log(frutas4) // Imprime el nuevo array filtrado sin "banana"
 
 const frutas5 = frutas.map(function (fruta) {
@@ -53,8 +56,12 @@ const frutas3 = ["pera", "mango"]
 const todasLasFrutas = [...frutas2, ...frutas3] // Combina los arrays utilizando el operador de propagación
 console.log(todasLasFrutas) // Imprime el nuevo array combinado
 
-const frutaBuscada = frutas2.find((fruta) => fruta === "banana") // Busca un elemento específico en el array
+const frutaBuscada = frutas2.find((fruta) => fruta === "banana") // Busca un elemento específico en el array y si no encuentra nada devuelve undefined
 console.log(frutaBuscada) // Imprime la fruta encontrada o undefined si no se encuentra
+
+frutas.includes("banana")// El método include() sirve para verificar si un valor o elemento existe dentro de un array o cadena de texto, devuelve un valor booleano (true o false)
+numeros.some(numero => numero > 10) // El método some() sirve para comprobar si al menos un elemento de un arreglo cumple con una condición específica
+numeros.every(numero => numero > 0) // El método every() comprueba si todos los elementos de un array cumplen con una condición dada
 
 //Destructuración de arrays: permite extraer valores de un array y asignarlos a variables individuales
 //Ejemplo 1
@@ -74,6 +81,7 @@ for (let i = 0; i < frutas2.length; i++) { //consta de tres partes: la inicializ
 }
 
 //Arrays con forEach: se puede utilizar el método forEach para iterar sobre los elementos de un array de manera más concisa y no genera un nuevo array
+//forEach() siempre devuelve undefined
 frutas2.forEach((fruta) => {//consta de una función de callback que se ejecuta para cada elemento del array, donde "fruta" representa el elemento actual en cada iteración
     console.log(fruta) // Imprime cada fruta del array utilizando el método forEach
 })
@@ -86,3 +94,5 @@ console.log(frutasEnMayusculas) // Imprime el nuevo array con las frutas en may�
 for (const fruta of frutas2) { //consta de la palabra clave "for", seguida de una variable (fruta) que representa el elemento actual en cada iteración, la palabra clave "of" y el array que se desea iterar (frutas2)
     console.log(fruta) // Imprime cada fruta del array utilizando el bucle for...of
 }
+
+//
