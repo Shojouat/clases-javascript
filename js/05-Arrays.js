@@ -27,7 +27,7 @@ console.table(nuevaFruta2) // Imprime el nuevo array combinado en formato de tab
 frutas[0] = "naranja" // Modifica el valor del primer elemento del array (índice 0)
 console.log(frutas) // Imprime el array actualizado con el valor modificado
 
-frutas.pop() // Elimina el último elemento del array
+frutas.pop() // Elimina el último elemento del array, no recibe ningun parametro
 console.log(frutas) // Imprime el array actualizado sin el último elemento
 frutas.shift() // Elimina el primer elemento del array
 console.log(frutas) // Imprime el array actualizado sin el primer elemento
